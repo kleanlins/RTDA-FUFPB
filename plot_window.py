@@ -308,6 +308,7 @@ class PlotWindow(QtWidgets.QWidget):
         self.Y2 = list([200] * int(graph_time))
         pen_color = 'b'
         x_value = 0
+        all_values = list()
         self.plt_size = int(graph_time) * (-1)
 
         # PLOT 1 CURVES
@@ -329,9 +330,10 @@ class PlotWindow(QtWidgets.QWidget):
             # self.plot_widget2.plot(X, Y, clear=True, pen='b')
             try:
                 self.socket_con.send("ok".encode())
-                x_value = int(self.socket_con.recv(1024).decode('utf-8'))
+                all_values = list(int(self.socket_con.recv(1024).decode('utf-8')))
+                x_value = all_values[0]
             except Exception as e:
-                print("Unreadable value.")
+                print(f"Unreadable value: {e}")
             else:
                 self.Y.append(x_value)
                 self.Y2.append(x_value * 2)
