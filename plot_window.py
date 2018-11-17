@@ -49,7 +49,7 @@ class PlotWindow(QtWidgets.QWidget):
         self.main_layout.addWidget(self.temp_group, 1, 0)
         self.main_layout.addWidget(self.dist_group, 2, 0)
         self.main_layout.addWidget(self.press_group, 3, 0)
-        self.main_layout.addWidget(self.misc_group, 4, 0)
+        # self.main_layout.addWidget(self.misc_group, 4, 0)
         self.main_layout.addWidget(self.box_graph_1, 1, 1, 4, 3)
 
         self.main_layout.setColumnMinimumWidth(1, 700)
@@ -73,7 +73,7 @@ class PlotWindow(QtWidgets.QWidget):
 
         # HOST AND PORT TEXT ENTRY
         self.host_entry = QtWidgets.QLineEdit()
-        self.host_entry.setText("192.168.0.104")
+        self.host_entry.setText("192.168.0.240")
 
         self.port_entry = QtWidgets.QLineEdit()
         self.port_entry.setText("5555")
@@ -128,111 +128,115 @@ class PlotWindow(QtWidgets.QWidget):
         group3_layout = QtWidgets.QGridLayout()
         self.press_group.setLayout(group3_layout)
 
-        self.misc_group = QtWidgets.QGroupBox("MISCELANEOUS")
-        group4_layout = QtWidgets.QGridLayout()
-        self.misc_group.setLayout(group4_layout)
+        # self.misc_group = QtWidgets.QGroupBox("MISCELANEOUS")
+        # group4_layout = QtWidgets.QGridLayout()
+        # self.misc_group.setLayout(group4_layout)
 
         # TEMPERATURE LABELS
         tmp_oleo_lb = QtWidgets.QCheckBox("Óleo")
         tmp_radE_lb = QtWidgets.QCheckBox("Rad. Entrada")
         tmp_radS_lb = QtWidgets.QCheckBox("Rad. Saída")
-        tmp_esc1_lb = QtWidgets.QCheckBox("Escape - 1")
-        tmp_esc2_lb = QtWidgets.QCheckBox("Escape - 2")
-        tmp_esc3_lb = QtWidgets.QCheckBox("Escape - 3")
-        tmp_esc4_lb = QtWidgets.QCheckBox("Escape - 4")
-        tmp_arRet_lb = QtWidgets.QCheckBox("Ar Retificador")
-        tmp_arBat_lb = QtWidgets.QCheckBox("Ar Bateria")
+        tmp_banc_lb = QtWidgets.QCheckBox("Banco")
+        # tmp_esc1_lb = QtWidgets.QCheckBox("Escape - 1")
+        # tmp_esc2_lb = QtWidgets.QCheckBox("Escape - 2")
+        # tmp_esc3_lb = QtWidgets.QCheckBox("Escape - 3")
+        # tmp_esc4_lb = QtWidgets.QCheckBox("Escape - 4")
+        # tmp_arRet_lb = QtWidgets.QCheckBox("Ar Retificador")
+        # tmp_arBat_lb = QtWidgets.QCheckBox("Ar Bateria")
 
         self.tmp_oleo_vl = QtWidgets.QLabel(" °")
         self.tmp_radE_vl = QtWidgets.QLabel(" °")
         self.tmp_radS_vl = QtWidgets.QLabel(" °")
-        self.tmp_esc1_vl = QtWidgets.QLabel(" °")
-        self.tmp_esc2_vl = QtWidgets.QLabel(" °")
-        self.tmp_esc3_vl = QtWidgets.QLabel(" °")
-        self.tmp_esc4_vl = QtWidgets.QLabel(" °")
-        self.tmp_arRet_vl = QtWidgets.QLabel(" °")
-        self.tmp_arBat_vl = QtWidgets.QLabel(" °")
+        self.tmp_banc_vl = QtWidgets.QLabel(" °")
+        # self.tmp_esc1_vl = QtWidgets.QLabel(" °")
+        # self.tmp_esc2_vl = QtWidgets.QLabel(" °")
+        # self.tmp_esc3_vl = QtWidgets.QLabel(" °")
+        # self.tmp_esc4_vl = QtWidgets.QLabel(" °")
+        # self.tmp_arRet_vl = QtWidgets.QLabel(" °")
+        # self.tmp_arBat_vl = QtWidgets.QLabel(" °")
 
         group1_layout.addWidget(tmp_oleo_lb, 0, 0)
         group1_layout.addWidget(tmp_radE_lb, 1, 0)
         group1_layout.addWidget(tmp_radS_lb, 2, 0)
-        group1_layout.addWidget(tmp_esc1_lb, 3, 0)
-        group1_layout.addWidget(tmp_esc2_lb, 4, 0)
-        group1_layout.addWidget(tmp_esc3_lb, 5, 0)
-        group1_layout.addWidget(tmp_esc4_lb, 6, 0)
-        group1_layout.addWidget(tmp_arRet_lb, 7, 0)
-        group1_layout.addWidget(tmp_arBat_lb, 8, 0)
+        group1_layout.addWidget(tmp_banc_lb, 3, 0)
+        # group1_layout.addWidget(tmp_esc1_lb, 3, 0)
+        # group1_layout.addWidget(tmp_esc2_lb, 4, 0)
+        # group1_layout.addWidget(tmp_esc3_lb, 5, 0)
+        # group1_layout.addWidget(tmp_esc4_lb, 6, 0)
+        # group1_layout.addWidget(tmp_arRet_lb, 7, 0)
+        # group1_layout.addWidget(tmp_arBat_lb, 8, 0)
 
         group1_layout.addWidget(self.tmp_oleo_vl, 0, 1, QtCore.Qt.AlignRight)
         group1_layout.addWidget(self.tmp_radE_vl, 1, 1, QtCore.Qt.AlignRight)
         group1_layout.addWidget(self.tmp_radS_vl, 2, 1, QtCore.Qt.AlignRight)
-        group1_layout.addWidget(self.tmp_esc1_vl, 3, 1, QtCore.Qt.AlignRight)
-        group1_layout.addWidget(self.tmp_esc2_vl, 4, 1, QtCore.Qt.AlignRight)
-        group1_layout.addWidget(self.tmp_esc3_vl, 5, 1, QtCore.Qt.AlignRight)
-        group1_layout.addWidget(self.tmp_esc4_vl, 6, 1, QtCore.Qt.AlignRight)
-        group1_layout.addWidget(self.tmp_arRet_vl, 7, 1, QtCore.Qt.AlignRight)
-        group1_layout.addWidget(self.tmp_arBat_vl, 8, 1, QtCore.Qt.AlignRight)
+        group1_layout.addWidget(self.tmp_banc_vl, 3, 1, QtCore.Qt.AlignRight)
+        # group1_layout.addWidget(self.tmp_esc1_vl, 3, 1, QtCore.Qt.AlignRight)
+        # group1_layout.addWidget(self.tmp_esc2_vl, 4, 1, QtCore.Qt.AlignRight)
+        # group1_layout.addWidget(self.tmp_esc3_vl, 5, 1, QtCore.Qt.AlignRight)
+        # group1_layout.addWidget(self.tmp_esc4_vl, 6, 1, QtCore.Qt.AlignRight)
+        # group1_layout.addWidget(self.tmp_arRet_vl, 7, 1, QtCore.Qt.AlignRight)
+        # group1_layout.addWidget(self.tmp_arBat_vl, 8, 1, QtCore.Qt.AlignRight)
 
 
         # DISTANCE LABELS
         esterc_lb = QtWidgets.QCheckBox("Esterçamento")
-        mRatio_lb = QtWidgets.QCheckBox("Motion Ratio")
-        deslMola_lb = QtWidgets.QCheckBox("Desl. Mola")
+        accx_lb = QtWidgets.QCheckBox("Eixo X")
+        accy_lb = QtWidgets.QCheckBox("Eixo Y")
+        accz_lb = QtWidgets.QCheckBox("Eixo Z")
+        # mRatio_lb = QtWidgets.QCheckBox("Motion Ratio")
+        # deslMola_lb = QtWidgets.QCheckBox("Desl. Mola")
 
         self.esterc_vl = QtWidgets.QLabel(" X")
-        self.mRatio_vl = QtWidgets.QLabel(" X")
-        self.deslMola_vl = QtWidgets.QLabel(" X")
+        self.accx_vl = QtWidgets.QLabel(" X")
+        self.accy_vl = QtWidgets.QLabel(" X")
+        self.accz_vl = QtWidgets.QLabel(" X")
+        # self.mRatio_vl = QtWidgets.QLabel(" X")
+        # self.deslMola_vl = QtWidgets.QLabel(" X")
 
         group2_layout.addWidget(esterc_lb, 0, 0)
-        group2_layout.addWidget(mRatio_lb, 1, 0)
-        group2_layout.addWidget(deslMola_lb, 2, 0)
+        group2_layout.addWidget(accx_lb, 1, 0)
+        group2_layout.addWidget(accy_lb, 2, 0)
+        group2_layout.addWidget(accz_lb, 3, 0)
 
         group2_layout.addWidget(self.esterc_vl, 0, 1, QtCore.Qt.AlignRight)
-        group2_layout.addWidget(self.mRatio_vl, 1, 1, QtCore.Qt.AlignRight)
-        group2_layout.addWidget(self.deslMola_vl, 2, 1, QtCore.Qt.AlignRight)
+        group2_layout.addWidget(self.accx_vl, 1, 1, QtCore.Qt.AlignRight)
+        group2_layout.addWidget(self.accy_vl, 2, 1, QtCore.Qt.AlignRight)
+        group2_layout.addWidget(self.accz_vl, 3, 1, QtCore.Qt.AlignRight)
 
         # PRESSURE LABELS
         press_cilF_lb = QtWidgets.QCheckBox("Cilindro Diant.")
         press_cilT_lb = QtWidgets.QCheckBox("Cilindro Trase.")
-        press_oleo_lb = QtWidgets.QCheckBox("Óleo")
-        press_comb_lb = QtWidgets.QCheckBox("Combustível")
 
         self.press_cilF_vl = QtWidgets.QLabel(" bar")
         self.press_cilT_vl = QtWidgets.QLabel(" bar")
-        self.press_oleo_vl = QtWidgets.QLabel(" bar")
-        self.press_comb_vl = QtWidgets.QLabel(" bar")
 
         group3_layout.addWidget(press_cilF_lb, 0, 0)
         group3_layout.addWidget(press_cilT_lb, 1, 0)
-        group3_layout.addWidget(press_oleo_lb, 2, 0)
-        group3_layout.addWidget(press_comb_lb, 3, 0)
 
         group3_layout.addWidget(self.press_cilF_vl, 0, 1, QtCore.Qt.AlignRight)
         group3_layout.addWidget(self.press_cilT_vl, 1, 1, QtCore.Qt.AlignRight)
-        group3_layout.addWidget(self.press_oleo_vl, 2, 1, QtCore.Qt.AlignRight)
-        group3_layout.addWidget(self.press_comb_vl, 3, 1, QtCore.Qt.AlignRight)
 
 
         # MISCELANEOUS LABELS
-        acc_lb = QtWidgets.QCheckBox("Acelerômetro")
-        gyro_lb = QtWidgets.QCheckBox("Giroscópio")
-        speed_lb = QtWidgets.QCheckBox("Velocidade")
-        rpm_lb = QtWidgets.QCheckBox("RPM")
+        # acc_lb = QtWidgets.QCheckBox("Acelerômetro")
+        # gyro_lb = QtWidgets.QCheckBox("Giroscópio")
+        # speed_lb = QtWidgets.QCheckBox("Velocidade")
+        # rpm_lb = QtWidgets.QCheckBox("RPM")
 
-        self.acc_vl = QtWidgets.QLabel(" a")
-        self.gyro_vl = QtWidgets.QLabel(" g")
-        self.speed_vl = QtWidgets.QLabel(" m/s")
-        self.rpm_vl = QtWidgets.QLabel(" RPM")
+        # self.acc_vl = QtWidgets.QLabel(" a")
+        # self.gyro_vl = QtWidgets.QLabel(" g")
+        # self.speed_vl = QtWidgets.QLabel(" m/s")
+        # self.rpm_vl = QtWidgets.QLabel(" RPM")
 
-        group4_layout.addWidget(acc_lb, 0, 0)
-        group4_layout.addWidget(gyro_lb, 1, 0)
-        group4_layout.addWidget(speed_lb, 2, 0)
-        group4_layout.addWidget(rpm_lb, 3, 0)
+        # group4_layout.addWidget(acc_lb, 0, 0)
+        # group4_layout.addWidget(gyro_lb, 1, 0)
+        # group4_layout.addWidget(speed_lb, 2, 0)
+        # group4_layout.addWidget(rpm_lb, 3, 0)
 
-        group4_layout.addWidget(self.acc_vl, 0, 1, QtCore.Qt.AlignRight)
-        group4_layout.addWidget(self.gyro_vl, 1, 1, QtCore.Qt.AlignRight)
-        group4_layout.addWidget(self.speed_vl, 2, 1, QtCore.Qt.AlignRight)
-        group4_layout.addWidget(self.rpm_vl, 3, 1, QtCore.Qt.AlignRight)
+        # group4_layout.addWidget(self.acc_vl, 0, 1, QtCore.Qt.AlignRight)
+        # group4_layout.addWidget(self.gyro_vl, 1, 1, QtCore.Qt.AlignRight)
+        # group4_layout.addWidget(self.speed_vl, 2, 1, QtCore.Qt.AlignRight)
+        # group4_layout.addWidget(self.rpm_vl, 3, 1, QtCore.Qt.AlignRight)
 
 
         group1_layout.setColumnMinimumWidth(0, 30)
@@ -247,7 +251,7 @@ class PlotWindow(QtWidgets.QWidget):
         self.plot_widget1.hideAxis('left')
         self.plot_widget1.hideAxis('bottom')
         self.plot_widget1.hideAxis('right')
-        self.plot_widget1.setRange(yRange=[0, 100, 250, 500, 750, 1030])
+        self.plot_widget1.setRange(yRange=[0, 100])
 
 
         # TIMED GRAPH PLOT 2
@@ -255,7 +259,7 @@ class PlotWindow(QtWidgets.QWidget):
         self.plot_widget2.hideAxis('left')
         self.plot_widget2.hideAxis('bottom')
         self.plot_widget2.hideAxis('right')
-        self.plot_widget2.setRange(yRange=[0, 100, 250, 500, 750, 1030])
+        self.plot_widget2.setRange(yRange=[0, 600])
 
 
         # HORIZONTAL GRAPH BAR
@@ -264,7 +268,7 @@ class PlotWindow(QtWidgets.QWidget):
 
         self.h_ax = self.hbar_figure.add_axes([0, 0, 1, 1])
         self.h_ax.barh(0, 15, 0.3, align='center')
-        self.h_ax.set_xticks([0, 250, 500, 750, 1000])
+        self.h_ax.set_xticks([0, 442]) # 196 - 685 ()
         self.h_ax.set_xticklabels(["Horizontal value"])
 
         self.h_ax.axes.yaxis.set_visible(False)
@@ -281,9 +285,9 @@ class PlotWindow(QtWidgets.QWidget):
         self.v_ax = self.vbars_figure.add_subplot(111)
         self.v_ax.bar(0.25, 15, 0.2, color='red', align='center')
         self.v_ax.bar(0, 10, 0.2, color='green')
-        self.v_ax.set_yticks([0, 250, 500, 750, 1000])
+        self.v_ax.set_yticks([0, 590])
         self.v_ax.set_xticks([0, 0.25])
-        self.v_ax.set_xticklabels(("Throttle", "Break"))
+        self.v_ax.set_xticklabels(("DIANTEIRO", "TRASEIRO"))
         self.v_ax.axes.yaxis.set_visible(False)
         self.v_ax.spines['top'].set_visible(False)
         self.v_ax.spines['right'].set_visible(False)
@@ -301,14 +305,14 @@ class PlotWindow(QtWidgets.QWidget):
 
     def wupdate_plot(self):
         # graph time = plot_time/delay_data
-        plot_time, ig = self.plot_time_spin.currentText().split()
-        graph_time = (int(plot_time)*1000)/50
+        plot_time, ignore = self.plot_time_spin.currentText().split()
+        graph_time = (int(plot_time)*1000)/100
         X = list(range(int(graph_time)))
         self.Y = list([200] * int(graph_time))
         self.Y2 = list([200] * int(graph_time))
+        self.Y3 = list([200] * int(graph_time))
         pen_color = 'b'
         x_value = 0
-        all_values = list()
         self.plt_size = int(graph_time) * (-1)
 
         # PLOT 1 CURVES
@@ -326,46 +330,47 @@ class PlotWindow(QtWidgets.QWidget):
             self.curve.setData(self.Y[self.plt_size:], pen=pg.mkPen(pen_color, width=2))
             self.curve2.setData(self.Y2[self.plt_size:], pen=pg.mkPen('b', width=2))
 
-            self.curve3.setData(self.Y[self.plt_size:], pen=pg.mkPen('g', width=2))
+            self.curve3.setData(self.Y3[self.plt_size:], pen=pg.mkPen('g', width=2))
             # self.plot_widget2.plot(X, Y, clear=True, pen='b')
             try:
                 self.socket_con.send("ok".encode())
-                all_values = list(int(self.socket_con.recv(1024).decode('utf-8')))
-                x_value = all_values[0]
+
+                # received data
+                # entrada, saida, motor, accx, accy, accz, tempacc, ester, dianteiro, traseiro
+                entrada, saida, motor, accx, accy, accz, tempacc, dianteiro, traseiro, ester = self.socket_con.recv(1024).decode('utf-8').split(",")
+                x_value = int(ester)
             except Exception as e:
                 print(f"Unreadable value: {e}")
             else:
-                self.Y.append(x_value)
-                self.Y2.append(x_value * 2)
+                entf = float(entrada)
+                entrada = int(entf)
+ 
+                saif = float(saida)
+                saida = int(saif)
 
+                self.Y.append(int(entrada))
+                self.Y2.append(int(saida))
+                self.Y3.append((int(dianteiro) + int(traseiro))/2 )
+
+                ester = int(ester) - 196
 
                 print(x_value)
                 print("size of array: ", len(self.Y),  len(self.Y2))
 
-            self.tmp_oleo_vl.setText(str(x_value) + " °")
-            self.tmp_radE_vl.setText(str(x_value) + " °")
-            self.tmp_radS_vl.setText(str(x_value) + " °")
-            self.tmp_esc1_vl.setText(str(x_value) + " °")
-            self.tmp_esc2_vl.setText(str(x_value) + " °")
-            self.tmp_esc3_vl.setText(str(x_value) + " °")
-            self.tmp_esc4_vl.setText(str(x_value) + " °")
-            self.tmp_arRet_vl.setText(str(x_value) + " °")
-            self.tmp_arBat_vl.setText(str(x_value) + " °")
-            self.esterc_vl.setText(str(x_value) + " X")
-            self.mRatio_vl.setText(str(x_value) + " X")
-            self.deslMola_vl.setText(str(x_value) + " X")
-            self.press_cilF_vl.setText(str(x_value) + " bar")
-            self.press_cilT_vl.setText(str(x_value) + " bar")
-            self.press_oleo_vl.setText(str(x_value) + " bar")
-            self.press_comb_vl.setText(str(x_value) + " bar")
-            self.acc_vl.setText(str(x_value) + " a")
-            self.gyro_vl.setText(str(x_value) + " g")
-            self.speed_vl.setText(str(x_value) + " m/s")
-            self.rpm_vl.setText(str(x_value) + " RPM")
+            self.tmp_oleo_vl.setText(str(motor) + " °")
+            self.tmp_radE_vl.setText(str(entrada) + " °")
+            self.tmp_radS_vl.setText(str(saida) + " °")
+            self.tmp_banc_vl.setText(str(tempacc) + " °")
+            self.esterc_vl.setText(str(ester) + " X")
+            self.press_cilF_vl.setText(str(dianteiro) + " bar")
+            self.press_cilT_vl.setText(str(traseiro) + " bar")
+            self.accx_vl.setText(str(accx) + " a")
+            self.accy_vl.setText(str(accy) + " a")
+            self.accz_vl.setText(str(accz) + " a")
 
-            self.v_ax.patches[1].set_height(x_value)
-            self.v_ax.patches[0].set_height(x_value*2)
-            self.h_ax.patches[0].set_width(x_value)
+            self.v_ax.patches[1].set_height(int(dianteiro))
+            self.v_ax.patches[0].set_height(int(traseiro))
+            self.h_ax.patches[0].set_width(int(ester))
 
             self.horizontal_canvas.draw()
             self.vertical_canvas.draw()
