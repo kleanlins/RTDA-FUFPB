@@ -259,7 +259,7 @@ class PlotWindow(QtWidgets.QWidget):
         self.plot_widget2.hideAxis('left')
         self.plot_widget2.hideAxis('bottom')
         self.plot_widget2.hideAxis('right')
-        self.plot_widget2.setRange(yRange=[0, 600])
+        self.plot_widget2.setRange(yRange=[0, 700])
 
 
         # HORIZONTAL GRAPH BAR
@@ -285,7 +285,7 @@ class PlotWindow(QtWidgets.QWidget):
         self.v_ax = self.vbars_figure.add_subplot(111)
         self.v_ax.bar(0.25, 15, 0.2, color='red', align='center')
         self.v_ax.bar(0, 10, 0.2, color='green')
-        self.v_ax.set_yticks([0, 590])
+        self.v_ax.set_yticks([0, 700])
         self.v_ax.set_xticks([0, 0.25])
         self.v_ax.set_xticklabels(("DIANTEIRO", "TRASEIRO"))
         self.v_ax.axes.yaxis.set_visible(False)
@@ -336,8 +336,8 @@ class PlotWindow(QtWidgets.QWidget):
                 self.socket_con.send("ok".encode())
 
                 # received data
-                # entrada, saida, motor, accx, accy, accz, tempacc, ester, dianteiro, traseiro
-                entrada, saida, motor, accx, accy, accz, tempacc, dianteiro, traseiro, ester = self.socket_con.recv(1024).decode('utf-8').split(",")
+                # saida, entrada, motor, accx, accy, accz, tempacc, ester, dianteiro, traseiro
+                saida, entrada, motor, accx, accy, accz, tempacc, dianteiro, traseiro, ester = self.socket_con.recv(1024).decode('utf-8').split(",")
                 x_value = int(ester)
             except Exception as e:
                 print(f"Unreadable value: {e}")
