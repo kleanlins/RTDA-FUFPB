@@ -73,7 +73,7 @@ class PlotWindow(QtWidgets.QWidget):
 
         # HOST AND PORT TEXT ENTRY
         self.host_entry = QtWidgets.QLineEdit()
-        self.host_entry.setText("192.168.0.240")
+        self.host_entry.setText("192.168.0.240") # RASPBERRY DEFAULT ADDRESS
 
         self.port_entry = QtWidgets.QLineEdit()
         self.port_entry.setText("5555")
@@ -89,8 +89,6 @@ class PlotWindow(QtWidgets.QWidget):
         connection_layout.addWidget(self.connections_status_label, 0, 2)
         connection_layout.addWidget(self.port_entry, 1, 1)
         connection_layout.addWidget(self.connect_button, 1, 2)
-
-        # connection_layout.setcolumn
 
 
         # PLOT SETTINGS AND EXPORT TO CSV BUTTON
@@ -111,8 +109,6 @@ class PlotWindow(QtWidgets.QWidget):
         layout_right_panel.addWidget(self.plot_time_spin, 0, 1)
         layout_right_panel.addWidget(self.export_button, 1, 0, 1, 2)
 
-
-
         # ************ GROUP 1 ************
 
         # BOXES AND LAYOUTS
@@ -128,55 +124,26 @@ class PlotWindow(QtWidgets.QWidget):
         group3_layout = QtWidgets.QGridLayout()
         self.press_group.setLayout(group3_layout)
 
-        # self.misc_group = QtWidgets.QGroupBox("MISCELANEOUS")
-        # group4_layout = QtWidgets.QGridLayout()
-        # self.misc_group.setLayout(group4_layout)
-
         # TEMPERATURE LABELS
         tmp_oleo_lb = QtWidgets.QCheckBox("Óleo")
         tmp_radE_lb = QtWidgets.QCheckBox("Rad. Entrada")
         tmp_radS_lb = QtWidgets.QCheckBox("Rad. Saída")
         tmp_banc_lb = QtWidgets.QCheckBox("Banco")
-        # tmp_esc1_lb = QtWidgets.QCheckBox("Escape - 1")
-        # tmp_esc2_lb = QtWidgets.QCheckBox("Escape - 2")
-        # tmp_esc3_lb = QtWidgets.QCheckBox("Escape - 3")
-        # tmp_esc4_lb = QtWidgets.QCheckBox("Escape - 4")
-        # tmp_arRet_lb = QtWidgets.QCheckBox("Ar Retificador")
-        # tmp_arBat_lb = QtWidgets.QCheckBox("Ar Bateria")
 
         self.tmp_oleo_vl = QtWidgets.QLabel(" °")
         self.tmp_radE_vl = QtWidgets.QLabel(" °")
         self.tmp_radS_vl = QtWidgets.QLabel(" °")
         self.tmp_banc_vl = QtWidgets.QLabel(" °")
-        # self.tmp_esc1_vl = QtWidgets.QLabel(" °")
-        # self.tmp_esc2_vl = QtWidgets.QLabel(" °")
-        # self.tmp_esc3_vl = QtWidgets.QLabel(" °")
-        # self.tmp_esc4_vl = QtWidgets.QLabel(" °")
-        # self.tmp_arRet_vl = QtWidgets.QLabel(" °")
-        # self.tmp_arBat_vl = QtWidgets.QLabel(" °")
 
         group1_layout.addWidget(tmp_oleo_lb, 0, 0)
         group1_layout.addWidget(tmp_radE_lb, 1, 0)
         group1_layout.addWidget(tmp_radS_lb, 2, 0)
         group1_layout.addWidget(tmp_banc_lb, 3, 0)
-        # group1_layout.addWidget(tmp_esc1_lb, 3, 0)
-        # group1_layout.addWidget(tmp_esc2_lb, 4, 0)
-        # group1_layout.addWidget(tmp_esc3_lb, 5, 0)
-        # group1_layout.addWidget(tmp_esc4_lb, 6, 0)
-        # group1_layout.addWidget(tmp_arRet_lb, 7, 0)
-        # group1_layout.addWidget(tmp_arBat_lb, 8, 0)
 
         group1_layout.addWidget(self.tmp_oleo_vl, 0, 1, QtCore.Qt.AlignRight)
         group1_layout.addWidget(self.tmp_radE_vl, 1, 1, QtCore.Qt.AlignRight)
         group1_layout.addWidget(self.tmp_radS_vl, 2, 1, QtCore.Qt.AlignRight)
         group1_layout.addWidget(self.tmp_banc_vl, 3, 1, QtCore.Qt.AlignRight)
-        # group1_layout.addWidget(self.tmp_esc1_vl, 3, 1, QtCore.Qt.AlignRight)
-        # group1_layout.addWidget(self.tmp_esc2_vl, 4, 1, QtCore.Qt.AlignRight)
-        # group1_layout.addWidget(self.tmp_esc3_vl, 5, 1, QtCore.Qt.AlignRight)
-        # group1_layout.addWidget(self.tmp_esc4_vl, 6, 1, QtCore.Qt.AlignRight)
-        # group1_layout.addWidget(self.tmp_arRet_vl, 7, 1, QtCore.Qt.AlignRight)
-        # group1_layout.addWidget(self.tmp_arBat_vl, 8, 1, QtCore.Qt.AlignRight)
-
 
         # DISTANCE LABELS
         esterc_lb = QtWidgets.QCheckBox("Esterçamento")
@@ -215,28 +182,6 @@ class PlotWindow(QtWidgets.QWidget):
 
         group3_layout.addWidget(self.press_cilF_vl, 0, 1, QtCore.Qt.AlignRight)
         group3_layout.addWidget(self.press_cilT_vl, 1, 1, QtCore.Qt.AlignRight)
-
-
-        # MISCELANEOUS LABELS
-        # acc_lb = QtWidgets.QCheckBox("Acelerômetro")
-        # gyro_lb = QtWidgets.QCheckBox("Giroscópio")
-        # speed_lb = QtWidgets.QCheckBox("Velocidade")
-        # rpm_lb = QtWidgets.QCheckBox("RPM")
-
-        # self.acc_vl = QtWidgets.QLabel(" a")
-        # self.gyro_vl = QtWidgets.QLabel(" g")
-        # self.speed_vl = QtWidgets.QLabel(" m/s")
-        # self.rpm_vl = QtWidgets.QLabel(" RPM")
-
-        # group4_layout.addWidget(acc_lb, 0, 0)
-        # group4_layout.addWidget(gyro_lb, 1, 0)
-        # group4_layout.addWidget(speed_lb, 2, 0)
-        # group4_layout.addWidget(rpm_lb, 3, 0)
-
-        # group4_layout.addWidget(self.acc_vl, 0, 1, QtCore.Qt.AlignRight)
-        # group4_layout.addWidget(self.gyro_vl, 1, 1, QtCore.Qt.AlignRight)
-        # group4_layout.addWidget(self.speed_vl, 2, 1, QtCore.Qt.AlignRight)
-        # group4_layout.addWidget(self.rpm_vl, 3, 1, QtCore.Qt.AlignRight)
 
 
         group1_layout.setColumnMinimumWidth(0, 30)
@@ -303,7 +248,14 @@ class PlotWindow(QtWidgets.QWidget):
         layout_graphs.setRowMinimumHeight(1, 50)
         layout_graphs.setRowMinimumHeight(2, 200)
 
+        
+    
     def wupdate_plot(self):
+        """
+        wupdate_plot reads all connection input data and initializes a connection;
+        It also does all necessary data manipulation for real time plotting.
+        """
+        
         # graph time = plot_time/delay_data
         plot_time, ignore = self.plot_time_spin.currentText().split()
         graph_time = (int(plot_time)*1000)/100
@@ -336,7 +288,11 @@ class PlotWindow(QtWidgets.QWidget):
                 self.socket_con.send("ok".encode())
 
                 # received data
-                # saida, entrada, motor, accx, accy, accz, tempacc, ester, dianteiro, traseiro
+                # saida, entrada -> temperatura da água nas mangueiras do radiador
+                # motor -> temperatura do termobar sob o motor
+                # accx, accy, accz -> aceleração nos eixos do MPU6050
+                # dianteiro, traseiro -> pressão dos cilindros de freio
+                # ester -> potenciomentro longitudinal do esterçamento
                 saida, entrada, motor, accx, accy, accz, tempacc, dianteiro, traseiro, ester = self.socket_con.recv(1024).decode('utf-8').split(",")
                 x_value = int(ester)
             except Exception as e:
@@ -357,6 +313,7 @@ class PlotWindow(QtWidgets.QWidget):
                 print(x_value)
                 print("size of array: ", len(self.Y),  len(self.Y2))
 
+            # INTERFACE LABELS UPDATES
             self.tmp_oleo_vl.setText(str(motor) + " °")
             self.tmp_radE_vl.setText(str(entrada) + " °")
             self.tmp_radS_vl.setText(str(saida) + " °")
